@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="favicon.ico">
   <!--font-awesome link for icons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
   <link rel="stylesheet" media="screen" href="assets/css/style.css">
 </head>
@@ -24,77 +24,81 @@
   <div class="container">
     <!--header section start-->
     <header class="header">
-      <!-- <figure class="background-img">
-        <img src="assets/images/mbr.jpg" alt="Background image">
-      </figure> -->
       <div class="wrapper">
-        <div class="header-container">
-          <div class="nav-container">
-            <nav class="header-nav">
-              <ul>
-                <li><a href="#FIXME" title="Home">home</a></li>
-                <li><a href="#features" title="Features">features</a></li>
-                <li><a href="#blog" title="Blog">blog</a></li>
-                <li><a href="#shop" title="Shop">shop</a></li>
-                <li><a href="#demos" class="demos" title="Demos">demos</a></li>
-              </ul>
-            </nav>
-            <div>
-              <a href="#contact" class="btn blue contact-btn" title="Contact us">contact us</a>
-            </div>
-            <ul class="social-icons">
-              <li><a href="#FIXME" class="cart" title="Add to cart">add to cart</a></li>
-              <li><a href="#FIXME" class="search" title="Search">search</a></li>
-              <li><a href="#FIXME" class="website" title="Website">website</a></li>
+        <div class="hamburger">
+          <span class="bar">bar</span>
+          <span class="bar">bar</span>
+          <span class="bar">bar</span>
+        </div>
+        <div class="nav-container">
+          <nav class="header-nav">
+            <ul>
+              <li><a href="#FIXME" title="Home">home</a></li>
+              <li><a href="#features" title="Features">features</a></li>
+              <li><a href="#blog" title="Blog">blog</a></li>
+              <li><a href="#shop" title="Shop">shop</a></li>
+              <li><a href="#demos" class="demos" title="Demos">demos</a></li>
             </ul>
-            <div class="hamburger">
-              <span class="bar">bar</span>
-              <span class="bar">bar</span>
-              <span class="bar">bar</span>
-            </div>
+          </nav>
+          <div class="contact-header">
+            <a href="#contact" class="btn blue contact-btn" title="Contact us">contact us</a>
           </div>
-          <h1 class="main-heading">gadget site</h1>
-          <p class="info">website design template</p>
-          <div class="header-btns">
-            <a href="#FIXME" class="btn orange" title="About us">about us</a>
-            <a href="#FIXME" class="btn blue" title="More info">more info</a>
-          </div>
-          <figure class="keyboard-img">
-            <img src="assets/images/mbr-7.jpg" alt="Keyboard and phone">
-          </figure>
+          <ul class="social-icons">
+            <li><a href="#FIXME" class="cart" title="Add to cart">add to cart</a></li>
+            <li><a href="#FIXME" class="search" title="Search">search</a></li>
+            <li><a href="#FIXME" class="website" title="Website">website</a></li>
+          </ul>
         </div>
       </div>
     </header>
     <!--header section end-->
     <!--main section start-->
     <main>
+      <!--*****banner section start*****-->
+      <section class="banner-section">
+        <div class="wrapper">
+          <div class="banner-container">
+            <h1 class="main-heading">gadget site</h1>
+            <p class="info">website design template</p>
+            <div class="header-btns">
+              <a href="#FIXME" class="btn orange" title="About us">about us</a>
+              <a href="#FIXME" class="btn blue" title="More info">more info</a>
+            </div>
+            <figure class="keyboard-img">
+              <img src="assets/images/mbr-7.jpg" alt="Keyboard and phone">
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!--*****banner section end*****-->
+
       <!--*****features section start*****-->
-      <section class="features-section" id="features">
+      <div class="features-section" id="features">
         <div class="wrapper">
           <ul class="features-container">
             <li>
-              <h3 class="product-heading purple">newest models</h3>
+              <span class="product-heading purple">newest models</span>
               <p class="info">Here you would find the latest issued tech models with the best price.</p>
             </li>
             <li>
-              <h3 class="product-heading purple">active community</h3>
+              <span class="product-heading purple">active community</span>
               <p class="info">You can always ask us any question in our forum. Please, don't hesitate.We're
                 always happy to help you.</p>
             </li>
             <li>
-              <h3 class="product-heading purple">best support</h3>
+              <span class="product-heading purple">best support</span>
               <p class="info">In our team works only professionals, so you would receive an answer to any
                 question.</p>
             </li>
           </ul>
         </div>
-      </section>
+      </div>
       <!--*****features section end*****-->
 
-      <!--*****blog section start*****-->
-      <section class="blog-section" id="blog">
-        <div class="blog-container">
-          <div class="wrapper">
+      <!--*****blogTop section start*****-->
+      <section class="blogTop-section" id="blog">
+        <div class="wrapper">
+          <div class="blog-container">
             <figure class="galaxy-img">
               <img src="assets/images/05.jpg" alt="Galaxy tab s">
             </figure>
@@ -108,8 +112,13 @@
             </div>
           </div>
         </div>
-        <div class="blog-container">
-          <div class="wrapper">
+      </section>
+      <!--*****blogTop section end*****-->
+
+      <!--*****blogBottom section start*****-->
+      <section class="blogBottom-section">
+        <div class="wrapper">
+          <div class="blog-container">
             <div class="blog-description">
               <h2 class="sub-heading">reliable suppliers</h2>
               <p class="info">We collaborate with our suppliers for 5 years. There was never
@@ -126,14 +135,7 @@
               </figure>
             </div>
           </div>
-        </div>
-      </section>
-      <!--*****blog section end*****-->
-
-      <!--*****image section start*****-->
-      <div class="image-section">
-        <div class="description">
-          <div class="wrapper">
+          <div class="description">
             <p class="info">100% Fulfillment Assured. You can anticipate as demand complete contentment from the
               information technology and technical solutions you obtain from Tech Inc Solutions. We promise to provide
               excellent service, on-time as well as within your budget plan. What do you think of Website Design
@@ -144,16 +146,23 @@
               Design Template is one of Mobirise's best themes.</p>
           </div>
         </div>
-        <ul class="image-gallery">
-          <li><img src="assets/images/gallery00.jpg" alt="Smartwatch"></li>
-          <li><img src="assets/images/gallery01.jpg" alt="Mini smartwatch"></li>
-          <li><img src="assets/images/gallery02.jpg" alt="Earphones"></li>
-          <li><img src="assets/images/gallery03.jpg" alt="Iphone"></li>
-          <li><img src="assets/images/gallery04.jpg" alt="Macbook air"></li>
-          <li><img src="assets/images/gallery05.jpg" alt="Apple mouse"></li>
-          <li><img src="assets/images/gallery06.jpg" alt="Phone"></li>
-          <li><img src="assets/images/gallery07.jpg" alt="Starbuck coffee"></li>
-        </ul>
+      </section>
+      <!--*****blogBottom section end*****-->
+
+      <!--*****image section start*****-->
+      <div class="image-section">
+        <div class="wrapper">
+          <ul class="image-gallery">
+            <li><img src="assets/images/gallery00.jpg" alt="Smartwatch"></li>
+            <li><img src="assets/images/gallery01.jpg" alt="Mini smartwatch"></li>
+            <li><img src="assets/images/gallery02.jpg" alt="Earphones"></li>
+            <li><img src="assets/images/gallery03.jpg" alt="Iphone"></li>
+            <li><img src="assets/images/gallery04.jpg" alt="Macbook air"></li>
+            <li><img src="assets/images/gallery05.jpg" alt="Apple mouse"></li>
+            <li><img src="assets/images/gallery06.jpg" alt="Phone"></li>
+            <li><img src="assets/images/gallery07.jpg" alt="Starbuck coffee"></li>
+          </ul>
+        </div>
       </div>
       <!--*****image section end*****-->
 
@@ -164,7 +173,7 @@
             <ul class="gadget-left">
               <li>
                 <div class="gadget-description">
-                  <h3 class="product-heading purple">newest models</h3>
+                  <span class="product-heading purple">newest models</span>
                   <p class="info">We always have the latest models of
                     tech products.</p>
                 </div>
@@ -174,7 +183,7 @@
               </li>
               <li>
                 <div class="gadget-description">
-                  <h3 class="product-heading purple">active community</h3>
+                  <span class="product-heading purple">active community</span>
                   <p class="info">In our community you would always find an answer and help in the issue you're
                     experiencing.</p>
                 </div>
@@ -184,7 +193,7 @@
               </li>
               <li>
                 <div class="gadget-description">
-                  <h3 class="product-heading purple">big projects</h3>
+                  <span class="product-heading purple">big projects</span>
                   <p class="info">You can always count on us in any
                     project, you're going to make.</p>
                 </div>
@@ -202,7 +211,7 @@
                   <span class="security">security</span>
                 </div>
                 <div class="gadget-description">
-                  <h3 class="product-heading purple">clients security</h3>
+                  <span class="product-heading purple">clients security</span>
                   <p class="info">We always care about our clients'
                     security. Their information is very important to us.</p>
                 </div>
@@ -212,7 +221,7 @@
                   <span class="multifunctional">multifunctional</span>
                 </div>
                 <div class="gadget-description">
-                  <h3 class="product-heading purple">multifunctional</h3>
+                  <span class="product-heading purple">multifunctional</span>
                   <p class="info">We would help you to cope with
                     different issues, which could occur in your business.</p>
                 </div>
@@ -222,7 +231,7 @@
                   <span class="analysis">analysis</span>
                 </div>
                 <div class="gadget-description">
-                  <h3 class="product-heading purple">market analysis</h3>
+                  <span class="product-heading purple">market analysis</span>
                   <p class="info">We're constantly analyzing and monitoring the market.</p>
                 </div>
               </li>
@@ -245,8 +254,8 @@
       </section>
       <!--*****deals section end*****-->
 
-      <!--*****sale section start*****-->
-      <section class="sale-section">
+      <!--*****shop section start*****-->
+      <section class="shop-section" id="shop">
         <div class="wrapper">
           <div class="sale-container">
             <h2 class="sub-heading purple">sale countdown</h2>
@@ -269,13 +278,6 @@
               </li>
             </ul>
           </div>
-        </div>
-      </section>
-      <!--*****sale section end*****-->
-
-      <!--*****shop section start*****-->
-      <section class="shop-section" id="shop">
-        <div class="wrapper">
           <ul class="sort-container">
             <li><a href="#FIXME" class="active-sort defaultSort" title="Default sorting"><span
                   class="uppercase">d</span>efault
@@ -290,7 +292,7 @@
             <div class="filter-container">
               <h4 class="mini-heading purple">best sellers</h4>
               <h4 class="mini-heading purple">price range</h4>
-              <form action="#FIXME" class="filter-form" method="post">
+              <div action="#FIXME" class="filter-form">
                 <div class="range-label">
                   <label for="range-start" class="min-price">22</label>
                   <label for="range-end" class="max-price">98</label>
@@ -300,18 +302,18 @@
                   <input type="range" class="max-input" name="range" min="22" max="98" value="98" id="range-end">
                 </div>
                 <div class="range-btns">
-                  <input type="button" class="btn orange filter-btn" value="filter">
-                  <input type="button" class="btn blue show-btn" value="show all">
+                  <a class="btn orange filter-btn">filter</a>
+                  <a class="btn blue show-btn">show all</a>
                 </div>
-              </form>
+              </div>
               <h4 class="mini-heading purple">filter</h4>
               <ul class="filter-list">
-                <li><a href="#FIXME" class="active-filter" title="All">all</a></li>
-                <li><a href="#FIXME" title="a">awesome</a></li>
-                <li><a href="#FIXME" title="Wonderful">wonderful</a></li>
-                <li><a href="#FIXME" title="Creative">creative</a></li>
-                <li><a href="#FIXME" title="Responsive">responsive</a></li>
-                <li><a href="#FIXME" title="Animated">animated</a></li>
+                <li><a href="#FIXME" class="active-filter" title="All" data-nav="all">all</a></li>
+                <li><a href="#FIXME" title="Awesome" data-nav="awesome">awesome</a></li>
+                <li><a href="#FIXME" title="Wonderful" data-nav="wonderful">wonderful</a></li>
+                <li><a href="#FIXME" title="Creative" data-nav="creative">creative</a></li>
+                <li><a href="#FIXME" title="Responsive" data-nav="responsive">responsive</a></li>
+                <li><a href="#FIXME" title="Animated" data-nav="animated">animated</a></li>
               </ul>
             </div>
           </div>
@@ -322,7 +324,9 @@
       <!--*****demos section start*****-->
       <section class="demos-section" id="demos">
         <figure class="laptop-bg">
-          <img src="assets/images/background10.jpg" alt="Macbook pro">
+          <div class="wrapper">
+            <img src="assets/images/background10.jpg" alt="Macbook pro">
+          </div>
         </figure>
         <div class="wrapper">
           <ul class="demos-slider">
@@ -478,15 +482,17 @@
           </p>
         </div>
         <figure class="smartwatch-img">
-          <img src="assets/images/04.png" alt="Smartwatch">
+          <div class="wrapper">
+            <img src="assets/images/04.png" alt="Smartwatch">
+          </div>
         </figure>
       </div>
       <!--*****about section end*****-->
 
       <!--*****contact section start*****-->
       <section class="contact-section" id="contact">
-        <div class="contact-top">
-          <div class="wrapper">
+        <div class="wrapper">
+          <div class="contact-container">
             <h2 class="sub-heading purple">get in touch with us</h2>
             <form action="#FIXME" class="contact-form" method="post">
               <div class="input-field">
@@ -517,46 +523,49 @@
             </form>
           </div>
         </div>
-        <div class="contact-bottom">
-          <div class="wrapper">
-            <ul class="contact-links">
-              <li>
-                <div class="behance icon">behance</div>
-                <div class="link-container">
-                  <a href="#FIXME" class="link purple" title="Behance">behance</a>
-                  <span class="link-info">portfolio</span>
-                </div>
-                <div class="arrow-right">arrow right</div>
-              </li>
-              <li>
-                <div class="vimeo icon">vimeo</div>
-                <div class="link-container">
-                  <a href="#FIXME" class="link purple" title="Vimeo">vimeo</a>
-                  <span class="link-info">video</span>
-                </div>
-                <div class="arrow-right">arrow right</div>
-              </li>
-              <li>
-                <div class="twitter icon">twitter</div>
-                <div class="link-container">
-                  <a href="#FIXME" class="link purple" title="Twitter">twitter</a>
-                  <span class="link-info">news feed</span>
-                </div>
-                <div class="arrow-right">arrow right</div>
-              </li>
-              <li>
-                <div class="instagram icon">instagram</div>
-                <div class="link-container">
-                  <a href="#FIXME" class="link purple" title="Instagram">instagram</a>
-                  <span class="link-info">photo</span>
-                </div>
-                <div class="arrow-right">arrow right</div>
-              </li>
-            </ul>
-          </div>
-        </div>
       </section>
       <!--*****contact section end*****-->
+
+      <!--*****social section end*****-->
+      <div class="social-section">
+        <div class="wrapper">
+          <ul class="contact-links">
+            <li>
+              <div class="behance icon">behance</div>
+              <div class="link-container">
+                <a href="#FIXME" class="link purple" title="Behance">behance</a>
+                <span class="link-info">portfolio</span>
+              </div>
+              <div class="arrow-right">arrow right</div>
+            </li>
+            <li>
+              <div class="vimeo icon">vimeo</div>
+              <div class="link-container">
+                <a href="#FIXME" class="link purple" title="Vimeo">vimeo</a>
+                <span class="link-info">video</span>
+              </div>
+              <div class="arrow-right">arrow right</div>
+            </li>
+            <li>
+              <div class="twitter icon">twitter</div>
+              <div class="link-container">
+                <a href="#FIXME" class="link purple" title="Twitter">twitter</a>
+                <span class="link-info">news feed</span>
+              </div>
+              <div class="arrow-right">arrow right</div>
+            </li>
+            <li>
+              <div class="instagram icon">instagram</div>
+              <div class="link-container">
+                <a href="#FIXME" class="link purple" title="Instagram">instagram</a>
+                <span class="link-info">photo</span>
+              </div>
+              <div class="arrow-right">arrow right</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--*****social section end*****-->
 
       <!--*****faq section start*****-->
       <section class="faq-section">

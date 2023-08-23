@@ -1,3 +1,8 @@
+const hamburger = document.querySelector(".hamburger");
+const navContainer = document.querySelector(".nav-container");
+const navLink = document.querySelectorAll(".nav-container a");
+const html = document.querySelector("html");
+
 const sendBtn = document.querySelector(".send-btn");
 const fullName = document.querySelector(".fullname-input ");
 const firstName = document.querySelector(".firstname-input");
@@ -23,8 +28,6 @@ const maxRange = document.querySelector(".max-input");
 const minPrice = document.querySelector(".min-price");
 const maxPrice = document.querySelector(".max-price");
 
-const imgContainer = document.querySelector(".img-container");
-
 const filterBtn = document.querySelector(".filter-btn");
 const showAllBtn = document.querySelector(".show-btn");
 
@@ -32,70 +35,98 @@ const defaultSort = document.querySelector(".defaultSort");
 const lowSort = document.querySelector(".lowSort");
 const highSort = document.querySelector(".highSort");
 
-let filterFlag = 0; // for filtering purpose
+const filterNavs = document.querySelectorAll(".filter-list a");
 
+const imgContainer = document.querySelector(".img-container");
+let filterFlag = 0; // for filtering purpose
 const productList = [
   {
     "imgUrl": "assets/images/shop0.jpg",
     "product": "Smart watch",
     "price": "46",
     "minPrice": "",
-    "discount": ""
+    "discount": "",
+    "dataProduct": "wonderful"
   },
   {
     "imgUrl": "assets/images/shop1.jpg",
     "product": "Fitness tracker",
     "price": "25",
     "minPrice": "",
-    "discount": ""
+    "discount": "",
+    "dataProduct": "creative"
   },
   {
     "imgUrl": "assets/images/shop2.jpg",
     "product": "Air pods",
     "price": "76",
     "minPrice": "52",
-    "discount": "-50"
+    "discount": "-50",
+    "dataProduct": "creative"
   },
   {
     "imgUrl": "assets/images/shop3.jpg",
     "product": "Phone",
     "price": "46",
     "minPrice": "",
-    "discount": ""
+    "discount": "",
+    "dataProduct": "awesome"
   },
   {
     "imgUrl": "assets/images/shop4.jpg",
     "product": "Notebook",
     "price": "23",
     "minPrice": "",
-    "discount": ""
+    "discount": "",
+    "dataProduct": "awesome"
   },
   {
     "imgUrl": "assets/images/shop5.jpg",
     "product": "Mouse",
     "price": "98",
     "minPrice": "",
-    "discount": ""
+    "discount": "",
+    "dataProduct": "responsive"
   },
   {
     "imgUrl": "assets/images/shop6.jpg",
     "product": "Media player",
     "price": "22",
     "minPrice": "",
-    "discount": ""
+    "discount": "",
+    "dataProduct": "responsive"
   },
   {
     "imgUrl": "assets/images/shop7.jpg",
     "product": "Red cap",
     "price": "55",
     "minPrice": "",
-    "discount": ""
+    "discount": "",
+    "dataProduct": "animated"
   }
 ]
+
+/************************************ Hamburger logic ***********************************************/
+//add active
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navContainer.classList.toggle("active-nav");
+  html.classList.toggle("html-scroll"); // prevent scrolling
+})
+
+//remove active
+navLink.forEach(e => {
+  e.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navContainer.classList.remove("active-nav");
+    html.classList.remove("html-scroll"); // remove prevent scrolling or user can scroll
+  })
+});
+
 /***************** Contact form validation ************************/
 // set input error value empty initially
 const inputError = document.querySelectorAll(".input-error");
-inputError.forEach((errorInput) => errorInput.innerHTML = "");
+inputError.forEach((errorInput) => (errorInput.innerHTML = ""));
 
 sendBtn.addEventListener("click", (e) => {
   e.preventDefault(); // prevent contact form submitting
@@ -294,6 +325,8 @@ function counter() {
   }, 0)
 }
 
+window.addEventListener("load", () => counter());
+
 /*************** Demos slider logic ************************/
 let activeSlide = 0;
 
@@ -320,39 +353,6 @@ function classLeft() {
     sliderContainer.scrollLeft -= 1300; // scroll sliderContainer to -1300px horizontally
 }
 
-/************************************* Price Range Filter Logic *******************************************/
-/* Get Range Slider Value logic */
-minRange.addEventListener("input", () => {
-  if (minRange.value >= 50)
-    minRange.value = 50; // prevent minRange to slide after 50th value
-  minPrice.innerHTML = minRange.value;
-});
-
-maxRange.addEventListener("input", () => {
-  if (maxRange.value <= 55)
-    maxRange.value = 55; // prevent maxRange to slide before 55th value
-  maxPrice.innerHTML = maxRange.value;
-});
-
-// filter btn functionality
-filterBtn.addEventListener("click", () => {
-  const minPrice = minRange.value, maxPrice = maxRange.value;
-
-  const filterProducts = productList.filter(product => {
-    if (product.price >= minPrice && product.price <= maxPrice) {
-      filterFlag = 1;
-      return product;
-    }
-  });
-  showProducts(filterProducts);
-});
-
-// show all btn functionality
-showAllBtn.addEventListener("click", () => {
-  removeProducts();
-  showProducts(productList);
-});
-
 /************************************ Show shop images logic ***********************************************/
 const showProducts = products => {
   if (filterFlag == 1) {
@@ -368,6 +368,8 @@ const showProducts = products => {
     const span = document.createElement("span");
     const minPrice = document.createElement("span");
     const discount = document.createElement("span");
+
+    li.dataset.product = `${product.dataProduct}`;
 
     img.src = `${product.imgUrl}`;
     img.alt = `${product.product}`;
@@ -408,8 +410,36 @@ const removeProducts = () => {
   }
 }
 
-window.addEventListener("load", () => {
-  counter();
+/************************************* Price Range Filter Logic *******************************************/
+/* Get Range Slider Value logic */
+minRange.addEventListener("input", () => {
+  if (minRange.value >= 50)
+    minRange.value = 50; // prevent minRange to slide after 50th value
+  minPrice.innerHTML = minRange.value;
+});
+
+maxRange.addEventListener("input", () => {
+  if (maxRange.value <= 55)
+    maxRange.value = 55; // prevent maxRange to slide before 55th value
+  maxPrice.innerHTML = maxRange.value;
+});
+
+// filter btn functionality
+filterBtn.addEventListener("click", () => {
+  const minPrice = minRange.value, maxPrice = maxRange.value;
+
+  const filterProducts = productList.filter(product => {
+    if (product.price >= minPrice && product.price <= maxPrice) {
+      filterFlag = 1;
+      return product;
+    }
+  });
+  showProducts(filterProducts);
+});
+
+// show all btn functionality
+showAllBtn.addEventListener("click", () => {
+  removeProducts();
   showProducts(productList);
 });
 
@@ -445,3 +475,36 @@ const previousActive = () => {
   const activeSort = document.querySelector(".active-sort");
   activeSort.classList.remove("active-sort");
 }
+
+/************************************ Product type filter logic ***********************************************/
+filterNavs.forEach(nav => nav.addEventListener("click", () => changeImageList(nav)));
+
+const changeImageList = nav => {
+  const getNavData = nav.getAttribute("data-nav");
+
+  const activeNav = document.querySelector(".active-filter");
+  activeNav.classList.remove("active-filter"); // remove previous active nav
+
+  nav.classList.add("active-filter"); // set current active nav
+
+  // if "all" button is clicked
+  if (getNavData == "all") {
+    filterFlag = 1;
+    showProducts(productList);
+    return;
+  }
+
+  const filterProducts = productList.filter(product => {
+    if (product.dataProduct == getNavData) {
+      filterFlag = 1;
+      return product;
+    }
+  });
+  showProducts(filterProducts);
+}
+
+// triggers when page is loaded
+window.addEventListener("load", () => {
+  counter();
+  showProducts(productList);
+});
